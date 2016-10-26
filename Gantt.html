@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> New Document </TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="JavaScript" src='jquery.js'></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src='gantt.js'></SCRIPT>
+<link rel="stylesheet" href="gantt.css" type="text/css"/>
+
+
+<body><h3>飞机甘特图</h3>
+<div style="position:relative" class="Gantt" id="GanttChart"></div>
+<div id='dvb' class='floatPic'>
+
+</div>
+<script language='javascript'>
+    //$开始的函数是Jquery的语法,如果不使用Jquery,可以这些代码放在Body代码之后的
+    var g = new Gantt(document.all.GanttChart);
+    var isHour = 0; //0代表小时 1代表分钟
+    function changeToMinus() {
+        window.isHour = 1;
+        g.DrawMinusSecend();
+
+
+    }
+    ;
+
+    function changeToHours() {
+        window.isHour = 0;
+        g.Draw();
+
+    }
+
+    function addTask(beiginTime, endTime, planeName, content, process, url, trueOrfalse,id) {
+        g.AddTaskDetail(new Task(beiginTime, endTime, planeName, content, process, url, trueOrfalse,id));
+        if (window.isHour === 0) {
+            g.Draw();
+        } else {
+            g.DrawMinusSecend();
+        }
+
+    }
+
+    $(function () {
+        //只是用于初始化初始化甘特图
+
+        //加入任务
+        g.AddTaskDetail(new Task('3:20', '4:20', 'B-1001', '1', 0, "http://www.google.com", true,'a'));
+        g.AddTaskDetail(new Task('4:20', '5:20', 'B-1001', '2', 100, "http://www.baidu.com", false,'b'));
+        g.AddTaskDetail(new Task('0:00', '1:00', 'B-1001', '3', 100, "http://www.renren.com", true,'c'));
+        g.AddTaskDetail(new Task('1:00', '2:00', 'B-1002', '4', 100, "http://www.renren.com", true,'d'));
+        g.AddTaskDetail(new Task('2:00', '3:00', 'B-1001', '5', 0, "http://www.renren.com", true,'e'));
+        g.AddTaskDetail(new Task('1:00', '4:00', 'B-1001', '6', 0, "http://www.renren.com", true,'f'));
+        g.AddTaskDetail(new Task('1:00', '3:00', 'B-1002', '7', 0, "http://www.renren.com", true,'m'));
+        g.Draw();
+
+
+        //修改任务列名
+        $("#firstRC").html("机型名称");
+
+
+    });
+
+</script>
+<button type="button" onclick="changeToHours()">变换</button>
+<button type="button" onclick="changeToMinus()">变换</button>
+<button type="button" onclick="addTask('4:00','6:00','B-1001','8',0,'www.baidu.com',true,'a')">增加</button>
+</body>
+
+</HTML>
