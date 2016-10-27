@@ -29,6 +29,12 @@
             android:name="com.sanxiongdi.npng.zhangbeibei.stickygridheaders.ItemDetailActivity"
             android:label="@string/app_name" >
         </activity>
+
+        <activity android:name=".zhangbeibei.ZbbMainActivity"></activity>
+
+        <activity android:name=".liuliang.LlMainAcitivity"></activity>
+
+        <activity android:name=".guohaiyang.GhyMainActivity"></activity>
     </application>
 
 </manifest>
