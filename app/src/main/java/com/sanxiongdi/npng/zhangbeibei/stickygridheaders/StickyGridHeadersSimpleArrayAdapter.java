@@ -21,13 +21,16 @@ import java.util.List;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sanxiongdi.npng.R;
@@ -90,7 +93,7 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
             convertView = mInflater.inflate(mHeaderResId, parent, false);
             holder = new HeaderViewHolder();
             holder.textView = (TextView) convertView.findViewById(android.R.id.text1);
-            holder.textView.setBackgroundColor(Color.argb(200, 100, 1, 1));
+//            holder.textView.setBackgroundColor(Color.parseColor("#389d3e"));
             convertView.setTag(holder);
         } else {
             holder = (HeaderViewHolder) convertView.getTag();
@@ -99,8 +102,12 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
         Founction item = getItem(position);
         if (item.isHeader()) {
             holder.textView.setText(item.getHeaderTitle());
+            Drawable drawable = mInflater.getContext().getResources().getDrawable(
+                    R.drawable.app_icon);
+            drawable.setBounds(0, 0, 100, 100);
+//            holder.textView.setGravity(Gravity.CENTER_VERTICAL);
+            holder.textView.setCompoundDrawables(drawable, null, null, null);
         }
-
         return convertView;
     }
 
@@ -112,7 +119,7 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
     @Override
     public long getItemId(int position) {
         Log.v("zbb", "getItemid" + position);
-     return position;
+        return position;
     }
 
     @Override
@@ -132,8 +139,12 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
 
         Founction item = getItem(position);
 //        if (!item.isHeader()) {
-            holder.textView.setText(item.getFunc_desc());
-            holder.textView.setBackground(mInflater.getContext().getResources().getDrawable(R.mipmap.ic_launcher));
+        holder.textView.setText(item.getFunc_desc());
+        holder.textView.setBackgroundResource(R.drawable.bg_func_item);
+//        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+//        lp.setMargins(5, 5, 5, 5);
+//        holder.textView.setLayoutParams(lp);
+//        holder.textView.setBackgroundColor(Color.parseColor("#389d3e"));
 //        }
         return convertView;
     }

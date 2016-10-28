@@ -17,14 +17,17 @@
 package com.sanxiongdi.npng.zhangbeibei.stickygridheaders;
 
 import com.sanxiongdi.npng.R;
+import com.sanxiongdi.npng.util.ToastUtil;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderClickListener;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderLongClickListener;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersSimpleArrayAdapter;
+import com.sanxiongdi.npng.zhangbeibei.togglebutton.ToggleButtonActivity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -160,7 +163,16 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     public void onItemClick(AdapterView<?> gridView, View view, int position, long id) {
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(position);
+//        mCallbacks.onItemSelected(position);
+
+
+        Intent intent = functions.get(position).getIntent();
+        if (intent == null) {
+            ToastUtil.makeText(getContext(), "暂不支持", Toast.LENGTH_LONG);
+            return;
+        }
+        startActivity(intent);
+
     }
 
     @Override
@@ -174,11 +186,12 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
 
                 return true;
             case R.id.menu_use_list_adapter:
-                mGridView.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.item,
-                        getResources().getStringArray(R.array.countries)));
-                mMenu.findItem(R.id.menu_use_list_adapter).setVisible(false);
-                mMenu.findItem(R.id.menu_use_sticky_adapter).setVisible(true);
-                mMenu.findItem(R.id.menu_toggle_sticky).setVisible(false);
+                ToastUtil.makeText(getContext(), "coming soon", Toast.LENGTH_LONG);
+//                Toast.makeText(getContext(), "coming soon", Toast.LENGTH_LONG).show();
+//                        getResources().getStringArray(R.array.countries)));
+//                mMenu.findItem(R.id.menu_use_list_adapter).setVisible(false);
+//                mMenu.findItem(R.id.menu_use_sticky_adapter).setVisible(true);
+//                mMenu.findItem(R.id.menu_toggle_sticky).setVisible(false);
                 return true;
             case R.id.menu_use_sticky_adapter:
 //                mGridView.setAdapter(new StickyGridHeadersSimpleArrayAdapter<String>(getActivity()
@@ -243,20 +256,22 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     }
 
     private void initFunctions() {
-        Founction zbbFunction = new Founction("张贝贝的第1个功能");
+        Intent intent = new Intent();
+        intent.setClass(getContext(), ToggleButtonActivity.class);
+        Founction zbbFunction = new Founction("ToogleButton", intent);
         zbbFunction.setHeader(true);
         zbbFunction.setHeaderTitle("张贝贝");
         functions.add(zbbFunction);
         addZbbFunctions();
 
 
-        Founction ghyFunction = new Founction("郭海洋的第1个功能");
+        Founction ghyFunction = new Founction("郭海洋的第1个功能", null);
         ghyFunction.setHeader(true);
         ghyFunction.setHeaderTitle("郭海洋");
         functions.add(ghyFunction);
         addGhyFunctions();
 
-        Founction llFunction = new Founction("刘亮的第1个功能");
+        Founction llFunction = new Founction("刘亮的第1个功能", null);
         llFunction.setHeader(true);
         llFunction.setHeaderTitle("刘亮");
         functions.add(llFunction);
@@ -265,7 +280,7 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
 
     private void addZbbFunctions() {
         for (int i = 0; i < 4; i++) {
-            Founction function = new Founction("张贝贝的第" + (i + 2) + "个功能");
+            Founction function = new Founction("张贝贝的第" + (i + 2) + "个功能", null);
             functions.add(function);
         }
 
@@ -274,7 +289,7 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     private void addGhyFunctions() {
         for (int i = 0; i < 4; i++) {
 
-            Founction function = new Founction("郭海洋的第" + (i + 2) + "个功能");
+            Founction function = new Founction("郭海洋的第" + (i + 2) + "个功能", null);
             functions.add(function);
         }
     }
@@ -282,7 +297,7 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     private void addLlFunctions() {
         for (int i = 0; i < 4; i++) {
 
-            Founction function = new Founction("刘亮的第" + (i + 2) + "个功能");
+            Founction function = new Founction("刘亮的第" + (i + 2) + "个功能", null);
             functions.add(function);
         }
     }

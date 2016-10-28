@@ -8,17 +8,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".MainActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+        <!-- <activity android:name=".MainActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
 
         <activity
-            android:name="com.sanxiongdi.npng.zhangbeibei.stickygridheaders.ItemListActivity"
-            android:label="@string/app_name" >
+            android:name=".zhangbeibei.stickygridheaders.ItemListActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,15 +28,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sanxiongdi.npng.zhangbeibei.stickygridheaders.ItemDetailActivity"
-            android:label="@string/app_name" >
-        </activity>
-
-        <activity android:name=".zhangbeibei.ZbbMainActivity"></activity>
-
-        <activity android:name=".liuliang.LlMainAcitivity"></activity>
-
-        <activity android:name=".guohaiyang.GhyMainActivity"></activity>
+            android:name=".zhangbeibei.stickygridheaders.ItemDetailActivity"
+            android:label="@string/app_name"></activity>
+        <activity android:name=".zhangbeibei.ZbbMainActivity" />
+        <activity android:name=".liuliang.LlMainAcitivity" />
+        <activity android:name=".guohaiyang.GhyMainActivity" />
+        <activity android:name=".zhangbeibei.togglebutton.ToggleButtonActivity"></activity>
     </application>
 
 </manifest>

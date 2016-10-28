@@ -7,6 +7,8 @@
     android:clipToPadding="false"
     android:columnWidth="100dip"
     android:numColumns="auto_fit"
-    android:padding="16dp"
-    android:background="#787888"
+    android:padding="10dp"
+    android:background="#ffffff"
+    android:horizontalSpacing="5dp"
+    android:verticalSpacing="5dp"
     tools:context="com.sanxiongdi.npng.zhangbeibei.stickygridheaders.ItemListActivity" />
