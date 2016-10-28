@@ -15,7 +15,7 @@ public class LlFounction extends BaseFounction {
 
     @Override
     public void addValue(Context context) {
-        Founction llFunction = new Founction("ProgressBar", new Intent(context,ProgressBarActivity.class));
+        Founction llFunction = new Founction("ProgressBar", null);
         llFunction.setHeader(true);
         llFunction.setHeaderTitle("刘亮");
         founctions.add(llFunction);
