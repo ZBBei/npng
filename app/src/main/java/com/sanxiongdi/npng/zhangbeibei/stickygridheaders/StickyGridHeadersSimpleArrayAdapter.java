@@ -141,6 +141,7 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
 //        if (!item.isHeader()) {
         holder.textView.setText(item.getFunc_desc());
         holder.textView.setBackgroundResource(R.drawable.bg_func_item);
+        holder.textView.setTextColor(Color.WHITE);
 //        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
 //        lp.setMargins(5, 5, 5, 5);
 //        holder.textView.setLayoutParams(lp);
