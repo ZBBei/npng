@@ -34,6 +34,7 @@
         <activity android:name=".liuliang.LlMainAcitivity" />
         <activity android:name=".guohaiyang.GhyMainActivity" />
         <activity android:name=".zhangbeibei.togglebutton.ToggleButtonActivity"></activity>
+        <activity android:name=".zhangbeibei.bubbletextview.BubbleTextViewActivity"></activity>
     </application>
 
 </manifest>

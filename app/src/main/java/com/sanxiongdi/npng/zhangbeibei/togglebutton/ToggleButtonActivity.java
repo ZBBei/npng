@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.github.anzewei.parallaxbacklayout.ParallaxActivityBase;
 import com.zcw.togglebutton.ToggleButton;
 import com.sanxiongdi.npng.R;
 
@@ -15,6 +16,8 @@ import org.w3c.dom.Text;
  * function:状态切换按钮
  */
 public class ToggleButtonActivity extends AppCompatActivity {
+
+
     private TextView tv_tb_title;
     private ToggleButton toggleButton;
 

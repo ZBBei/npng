@@ -2,4 +2,10 @@
     <string name="app_name">npng</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_toggle_sticky">Sticky Headers</string>
+
+    <!--bubbletextview-->
+    <string name="test">Hello world!\nHello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="test_title">Title &#160;&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="test_content">Content&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</string>
 </resources>
