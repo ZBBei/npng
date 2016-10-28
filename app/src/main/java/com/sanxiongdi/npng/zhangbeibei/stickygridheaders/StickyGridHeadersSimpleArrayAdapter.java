@@ -34,6 +34,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sanxiongdi.npng.R;
+import com.sanxiongdi.npng.util.DeviceUtil;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.*;
 
 import javax.xml.xpath.XPathFunction;
@@ -104,8 +105,8 @@ public class StickyGridHeadersSimpleArrayAdapter<T> extends BaseAdapter implemen
             holder.textView.setText(item.getHeaderTitle());
             Drawable drawable = mInflater.getContext().getResources().getDrawable(
                     R.drawable.app_icon);
-            drawable.setBounds(0, 0, 100, 100);
-//            holder.textView.setGravity(Gravity.CENTER_VERTICAL);
+            drawable.setBounds(0, 0, DeviceUtil.dpTopx(mInflater.getContext(),26), DeviceUtil.dpTopx(mInflater.getContext(),26));
+            holder.textView.setGravity(Gravity.CENTER_VERTICAL);
             holder.textView.setCompoundDrawables(drawable, null, null, null);
         }
         return convertView;
