@@ -16,14 +16,6 @@
 
 package com.sanxiongdi.npng.zhangbeibei.stickygridheaders;
 
-import com.sanxiongdi.npng.R;
-import com.sanxiongdi.npng.util.ToastUtil;
-import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView;
-import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderClickListener;
-import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderLongClickListener;
-import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersSimpleArrayAdapter;
-import com.sanxiongdi.npng.zhangbeibei.togglebutton.ToggleButtonActivity;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -39,11 +31,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sanxiongdi.npng.R;
+import com.sanxiongdi.npng.util.ToastUtil;
+import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderClickListener;
+import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderLongClickListener;
+import com.sanxiongdi.npng.zhangbeibei.togglebutton.ToggleButtonActivity;
 
 import java.util.ArrayList;
 import java.util.List;
