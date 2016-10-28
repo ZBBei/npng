@@ -19,6 +19,7 @@ package com.sanxiongdi.npng.zhangbeibei.stickygridheaders;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,7 +38,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sanxiongdi.npng.R;
+import com.sanxiongdi.npng.consts.BaseFounction;
+import com.sanxiongdi.npng.guohaiyang.GhyFounction;
+import com.sanxiongdi.npng.liuliang.LlFounction;
 import com.sanxiongdi.npng.util.ToastUtil;
+import com.sanxiongdi.npng.zhangbeibei.ZbbFounction;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderClickListener;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.StickyGridHeadersGridView.OnHeaderLongClickListener;
 import com.sanxiongdi.npng.zhangbeibei.togglebutton.ToggleButtonActivity;
@@ -100,10 +105,12 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     public ItemListFragment() {
     }
 
+    private Context context;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-
+        context = activity;
         // Activities containing this fragment must implement its callbacks.
         if (!(activity instanceof Callbacks)) {
             throw new IllegalStateException("Activity must implement fragment's callbacks.");
@@ -253,50 +260,18 @@ public class ItemListFragment extends Fragment implements OnItemClickListener,
     }
 
     private void initFunctions() {
-        Intent intent = new Intent();
-        intent.setClass(getContext(), ToggleButtonActivity.class);
-        Founction zbbFunction = new Founction("ToogleButton", intent);
-        zbbFunction.setHeader(true);
-        zbbFunction.setHeaderTitle("张贝贝");
-        functions.add(zbbFunction);
-        addZbbFunctions();
-
-
-        Founction ghyFunction = new Founction("郭海洋的第1个功能", null);
-        ghyFunction.setHeader(true);
-        ghyFunction.setHeaderTitle("郭海洋");
-        functions.add(ghyFunction);
-        addGhyFunctions();
-
-        Founction llFunction = new Founction("刘亮的第1个功能", null);
-        llFunction.setHeader(true);
-        llFunction.setHeaderTitle("刘亮");
-        functions.add(llFunction);
-        addLlFunctions();
-    }
-
-    private void addZbbFunctions() {
-        for (int i = 0; i < 4; i++) {
-            Founction function = new Founction("张贝贝的第" + (i + 2) + "个功能", null);
-            functions.add(function);
+        if (BaseFounction.getFounctions().size() >= 1) {
+            functions.addAll(BaseFounction.getFounctions());
+            return;
         }
+        ZbbFounction zbbFounction = new ZbbFounction();
+        zbbFounction.addValue(context);
+        GhyFounction ghyFounction = new GhyFounction();
+        ghyFounction.addValue(context);
+        LlFounction llFounction = new LlFounction();
+        llFounction.addValue(context);
+        functions.addAll(BaseFounction.getFounctions());
 
-    }
-
-    private void addGhyFunctions() {
-        for (int i = 0; i < 4; i++) {
-
-            Founction function = new Founction("郭海洋的第" + (i + 2) + "个功能", null);
-            functions.add(function);
-        }
-    }
-
-    private void addLlFunctions() {
-        for (int i = 0; i < 4; i++) {
-
-            Founction function = new Founction("刘亮的第" + (i + 2) + "个功能", null);
-            functions.add(function);
-        }
     }
 
     /**
