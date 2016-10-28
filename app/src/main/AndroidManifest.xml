@@ -32,6 +32,10 @@
             android:label="@string/app_name"></activity>
         <activity android:name=".zhangbeibei.ZbbMainActivity" />
         <activity android:name=".liuliang.LlMainAcitivity" />
+
+        <!-- 个性进度条-->
+        <activity android:name=".liuliang.ProgressBarActivity" />
+
         <activity android:name=".guohaiyang.GhyMainActivity" />
         <activity android:name=".zhangbeibei.togglebutton.ToggleButtonActivity"></activity>
         <activity android:name=".zhangbeibei.bubbletextview.BubbleTextViewActivity"></activity>
