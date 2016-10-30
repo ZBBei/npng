@@ -6,9 +6,7 @@ import android.os.Bundle;
 import com.sanxiongdi.npng.R;
 
 /**
- * Created by liuliang on 2016/10/26.14:40
- * Email: liang.liu@zmind.cn
- * Describle:
+ * ghy主页
  */
 
 public class GhyMainActivity extends Activity {
