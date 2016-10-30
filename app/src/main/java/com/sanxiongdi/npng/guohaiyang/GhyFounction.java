@@ -1,9 +1,11 @@
 package com.sanxiongdi.npng.guohaiyang;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.sanxiongdi.npng.consts.BaseFounction;
+import com.sanxiongdi.npng.guohaiyang.express.ExpressActivity;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.Founction;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class GhyFounction extends BaseFounction {
     @Override
     public void addValue(Context context) {
         {
-            Founction ghyFunction = new Founction("郭海洋的第1个功能", null);
+            Founction ghyFunction = new Founction("快递查询demo", new Intent(context,ExpressActivity.class));
             ghyFunction.setHeader(true);
             ghyFunction.setHeaderTitle("郭海洋");
             founctions.add(ghyFunction);

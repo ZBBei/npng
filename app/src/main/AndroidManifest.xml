@@ -37,6 +37,7 @@
         <activity android:name=".liuliang.ProgressBarActivity" />
 
         <activity android:name=".guohaiyang.GhyMainActivity" />
+        <activity android:name=".guohaiyang.express.ExpressActivity" />
         <activity android:name=".zhangbeibei.togglebutton.ToggleButtonActivity"></activity>
         <activity android:name=".zhangbeibei.bubbletextview.BubbleTextViewActivity"></activity>
     </application>

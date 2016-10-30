@@ -28,6 +28,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.zcw:togglebutton-library:1.0.0'
     compile 'com.github.anzewei:parallaxbacklayout:0.4'
-
-//    compile files('src/main/libs/stickygridheaders.jar')
+    compile 'com.zhy:okhttputils:2.0.0'
+    //    compile files('src/main/libs/stickygridheaders.jar')
+    compile 'com.google.code.gson:gson:2.8.0'
 }
