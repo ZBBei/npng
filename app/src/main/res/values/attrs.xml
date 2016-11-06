@@ -45,4 +45,14 @@
         <attr name="width" format="dimension"/>
         <attr name="nodeRadius" format="dimension"/>
     </declare-styleable>
+
+
+    <!-- 波浪进度条-->
+    <declare-styleable name="WavaBezierProgress">
+        <attr name="progress" format="integer"></attr>
+        <attr name="progressColor" format="color"></attr>
+        <attr name="progressTextColor" format="color"></attr>
+        <attr name="progressTextSize" format="dimension"></attr>
+        <attr name="progressTextLocation" format="dimension"></attr>
+    </declare-styleable>
 </resources>

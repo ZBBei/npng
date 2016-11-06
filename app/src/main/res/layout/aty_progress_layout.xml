@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.sanxiongdi.npng.liuliang.progress.WavaBezierProgress
+
+            android:id="@+id/wavaBezierProgress"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#e6f1ef"
+            app:progressTextSize="50dp"
+            app:progressColor="#e3e32b"
+            app:progressTextLocation="100dp"
+            app:progress="10"
+            app:progressTextColor="#de0d4c"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="加"/>
+
+            <Button
+                android:id="@+id/btn_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="减"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.sanxiongdi.npng.consts.BaseFounction;
+import com.sanxiongdi.npng.liuliang.progress.ProgressBarActivity;
+import com.sanxiongdi.npng.liuliang.waimai.DiancanActivity;
 import com.sanxiongdi.npng.zhangbeibei.stickygridheaders.Founction;
 
 /**
@@ -15,10 +17,17 @@ public class LlFounction extends BaseFounction {
 
     @Override
     public void addValue(Context context) {
-        Founction llFunction = new Founction("ProgressBar", null);
+        Founction llFunction = new Founction("ProgressBar",
+                new Intent(context, ProgressBarActivity.class));
         llFunction.setHeader(true);
         llFunction.setHeaderTitle("刘亮");
         founctions.add(llFunction);
+
+
+        Founction waimaiFunction = new Founction("仿百度外卖点餐",
+                new Intent(context, DiancanActivity.class));
+        founctions.add(waimaiFunction);
+
         for (int i = 0; i < 4; i++) {
             Founction function = new Founction("刘亮的第" + (i + 2) + "个功能", null);
             founctions.add(function);

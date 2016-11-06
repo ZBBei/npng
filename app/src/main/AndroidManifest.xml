@@ -34,7 +34,10 @@
         <activity android:name=".liuliang.LlMainAcitivity" />
 
         <!-- 个性进度条-->
-        <activity android:name=".liuliang.ProgressBarActivity" />
+        <activity android:name=".liuliang.progress.ProgressBarActivity" />
+
+        <!-- 仿百度外卖点餐-->
+        <activity android:name=".liuliang.waimai.DiancanActivity" />
 
         <activity android:name=".guohaiyang.GhyMainActivity" />
         <activity android:name=".guohaiyang.express.ExpressActivity" />
